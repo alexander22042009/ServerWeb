@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace BasicWebServer.Server.HTTP;
@@ -42,6 +42,8 @@ public class HeaderCollection : IEnumerable<Header>, IEnumerable
 
     public bool Contains(string name)
         => this.headers.Any(h => string.Equals(h.Name, name, StringComparison.OrdinalIgnoreCase));
+
+    public int Count => this.headers.Count;
 
     public IEnumerator<Header> GetEnumerator()
         => this.headers.GetEnumerator();
